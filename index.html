@@ -8,42 +8,37 @@
 :root{
   --bg:#0A1825; --bg2:#0E2233; --panel:#13293D; --panel2:#16344A; --line:#23445F;
   --ink:#EAF1F8; --muted:#90A4B8; --faint:#6B8198;
-  --green:#41B04C; --blue:#2670A4; --blueL:#3E92D1;
-  --green2:#5BC36A;
+  --green:#41B04C; --blue:#2670A4; --blueL:#3E92D1; --green2:#5BC36A;
   --st-deliv:#41B04C; --st-prog:#3E92D1; --st-plan:#C6A052; --st-block:#E0564F; --st-none:#7E8C9C;
   --radius:14px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{background:radial-gradient(1200px 600px at 80% -10%, #143049 0%, var(--bg) 55%) fixed; color:var(--ink);
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; font-size:15px; line-height:1.5}
-a{color:inherit}
 .wrap{max-width:1180px;margin:0 auto;padding:26px 22px 80px}
-
-/* header */
 header.top{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;flex-wrap:wrap;margin-bottom:22px}
 .brand{display:flex;gap:15px;align-items:flex-start}
 .mark{flex:none;width:52px;height:52px;margin-top:2px}
 .eyebrow{font-size:11px;letter-spacing:.22em;font-weight:700;color:var(--green);text-transform:uppercase}
 h1{font-size:27px;font-weight:800;letter-spacing:-.4px;margin:5px 0 4px}
 .sub{font-size:13.5px;color:var(--muted)}
-.actions{display:flex;gap:9px;flex-wrap:wrap}
+.actions{display:flex;gap:9px;flex-wrap:wrap;align-items:center}
+.who{font-size:12px;color:var(--muted);margin-right:2px}
+.who b{color:var(--ink)}
 .btn{border:1px solid var(--line);background:var(--panel);color:var(--ink);padding:9px 15px;border-radius:10px;
   font-size:13px;font-weight:600;cursor:pointer;transition:.15s;display:inline-flex;align-items:center;gap:7px}
 .btn:hover{border-color:var(--green);background:var(--panel2)}
 .btn.primary{background:var(--green);border-color:var(--green);color:#06210B}
 .btn.primary:hover{background:var(--green2)}
+.btn.ghost{background:none}
 .btn svg{width:15px;height:15px}
-
-/* key lever */
 .lever{position:relative;background:linear-gradient(135deg,rgba(65,176,76,.13),rgba(38,112,164,.10));
   border:1px solid rgba(65,176,76,.34);border-radius:var(--radius);padding:17px 44px 17px 19px;margin-bottom:22px}
 .lever .tag{font-size:10.5px;letter-spacing:.18em;font-weight:800;color:var(--green);text-transform:uppercase;margin-bottom:5px}
 .lever h2{font-size:16px;font-weight:700;margin-bottom:5px}
 .lever p{font-size:13.5px;color:#C6D6E4;line-height:1.55}
-.lever .x{position:absolute;top:11px;right:13px;cursor:pointer;color:var(--faint);font-size:17px;line-height:1;border:none;background:none}
+.lever .x{position:absolute;top:11px;right:13px;cursor:pointer;color:var(--faint);font-size:17px;border:none;background:none}
 .lever .x:hover{color:var(--ink)}
-
-/* filter chips */
 .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px;align-items:center}
 .chip{border:1px solid var(--line);background:var(--panel);color:var(--muted);padding:6px 13px;border-radius:20px;
   font-size:12.5px;font-weight:600;cursor:pointer;transition:.15s;display:inline-flex;align-items:center;gap:7px}
@@ -51,33 +46,26 @@ h1{font-size:27px;font-weight:800;letter-spacing:-.4px;margin:5px 0 4px}
 .chip.active{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 .chip .dot{width:8px;height:8px;border-radius:50%}
 .chip .cnt{font-weight:700;opacity:.8}
-
-/* grid */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:16px}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:17px 17px 15px;
   display:flex;flex-direction:column;position:relative;transition:.15s}
 .card:hover{border-color:var(--faint)}
 .card .crow{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;gap:8px}
-.cat{font-size:10px;letter-spacing:.14em;font-weight:700;text-transform:uppercase;color:var(--faint);
-  border:1px solid var(--line);padding:3px 8px;border-radius:6px}
+.cat{font-size:10px;letter-spacing:.14em;font-weight:700;text-transform:uppercase;color:var(--faint);border:1px solid var(--line);padding:3px 8px;border-radius:6px}
 .pill{font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
 .pill .d{width:7px;height:7px;border-radius:50%;background:currentColor}
 .card h3{font-size:16.5px;font-weight:700;letter-spacing:-.2px;margin-bottom:7px;line-height:1.25}
 .summary{font-size:13px;color:var(--muted);line-height:1.5;margin-bottom:13px;flex:1}
-
-/* tasks */
 .tasks{margin-bottom:12px}
 .tk-head{display:flex;justify-content:space-between;font-size:11px;color:var(--faint);font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px}
 .bar{height:5px;border-radius:5px;background:var(--panel2);overflow:hidden;margin-bottom:9px}
 .bar > i{display:block;height:100%;background:var(--green);border-radius:5px}
-.task{display:flex;gap:8px;align-items:flex-start;font-size:12.5px;color:var(--ink);padding:3px 0;cursor:pointer}
-.task .box{flex:none;width:15px;height:15px;border:1.5px solid var(--faint);border-radius:4px;margin-top:1px;
-  display:flex;align-items:center;justify-content:center}
+.task{display:flex;gap:8px;align-items:flex-start;font-size:12.5px;color:var(--ink);padding:3px 0}
+.task.can{cursor:pointer}
+.task .box{flex:none;width:15px;height:15px;border:1.5px solid var(--faint);border-radius:4px;margin-top:1px;display:flex;align-items:center;justify-content:center}
 .task.done .box{background:var(--green);border-color:var(--green)}
 .task.done .box svg{width:10px;height:10px;color:#06210B}
 .task.done span{color:var(--muted);text-decoration:line-through}
-
-/* update history */
 .upd{border-top:1px solid var(--line);padding-top:11px;margin-top:auto}
 .upd .lbl{font-size:10px;letter-spacing:.12em;font-weight:700;text-transform:uppercase;color:var(--faint);margin-bottom:6px}
 .uitem{font-size:12.5px;color:var(--muted);line-height:1.45;margin-bottom:7px;padding-left:13px;position:relative}
@@ -89,25 +77,28 @@ h1{font-size:27px;font-weight:800;letter-spacing:-.4px;margin:5px 0 4px}
 .more:hover{text-decoration:underline}
 .miniupd{font-size:11.5px;color:var(--faint);cursor:pointer;border:1px solid var(--line);background:none;border-radius:8px;padding:5px 11px;font-weight:600}
 .miniupd:hover{color:var(--ink);border-color:var(--green)}
-
-/* modal */
 .overlay{position:fixed;inset:0;background:rgba(5,12,20,.72);backdrop-filter:blur(3px);display:none;align-items:flex-start;justify-content:center;z-index:50;padding:40px 16px;overflow:auto}
 .overlay.open{display:flex}
 .modal{background:var(--bg2);border:1px solid var(--line);border-radius:16px;width:100%;max-width:560px;padding:24px}
+.modal.sm{max-width:430px}
 .modal h2{font-size:19px;margin-bottom:5px}
 .modal .desc{font-size:13px;color:var(--muted);margin-bottom:18px}
 .field{margin-bottom:14px}
 .field label{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--faint);margin-bottom:6px}
-.field input,.field select,.field textarea{width:100%;background:var(--panel);border:1px solid var(--line);color:var(--ink);
-  border-radius:9px;padding:10px 12px;font-size:14px;font-family:inherit}
+.field input,.field select,.field textarea{width:100%;background:var(--panel);border:1px solid var(--line);color:var(--ink);border-radius:9px;padding:10px 12px;font-size:14px;font-family:inherit}
 .field textarea{resize:vertical;min-height:64px}
 .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--green)}
 .mrow{display:flex;gap:12px}
 .mrow .field{flex:1}
 .modal-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:8px}
 .hide{display:none!important}
+.note{font-size:13px;color:var(--blueL);margin-top:10px}
 .foot{margin-top:26px;text-align:center;font-size:11.5px;color:var(--faint)}
-.foot b{color:var(--muted)}
+.setup{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px;max-width:680px;margin:30px auto}
+.setup h2{font-size:18px;margin-bottom:10px}
+.setup ol{margin:12px 0 0 18px;color:var(--muted);font-size:14px;line-height:1.8}
+.setup code{background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:1px 6px;color:var(--ink);font-size:12.5px}
+.banner{background:rgba(224,86,79,.12);border:1px solid rgba(224,86,79,.4);color:#F2B9B6;border-radius:10px;padding:10px 14px;font-size:13px;margin-bottom:18px}
 @media (max-width:560px){ .mrow{flex-direction:column;gap:0} h1{font-size:22px} }
 </style>
 </head>
@@ -123,17 +114,10 @@ h1{font-size:27px;font-weight:800;letter-spacing:-.4px;margin:5px 0 4px}
       <div>
         <div class="eyebrow">WISE Energy Group · Brand &amp; Communications</div>
         <h1>WISE 2026 — Live Status Board</h1>
-        <div class="sub" id="sub">Internal portfolio pipeline · 0 workstreams tracked</div>
+        <div class="sub" id="sub">Internal portfolio pipeline</div>
       </div>
     </div>
-    <div class="actions">
-      <button class="btn" onclick="openBackup()" title="Download a JSON snapshot">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>Local backup</button>
-      <button class="btn" onclick="exportReport()" title="Download a Markdown status report">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>Export report</button>
-      <button class="btn primary" onclick="openUpdate()">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg>What's new</button>
-    </div>
+    <div class="actions" id="actions"></div>
   </header>
 
   <div class="lever" id="lever">
@@ -143,10 +127,12 @@ h1{font-size:27px;font-weight:800;letter-spacing:-.4px;margin:5px 0 4px}
     <p>The five site builds and all downstream creative are waiting on final brand direction: <b>vector logo masters</b>, a <b>WISE Power mark</b> decision, codified neutrals, and ratified <b>NanoWise &amp; KJK palettes</b>. Closing out the Brand Redo is the single biggest unblock on the board.</p>
   </div>
 
+  <div id="viewonly"></div>
   <div class="filters" id="filters"></div>
   <div class="grid" id="grid"></div>
+  <div id="setup"></div>
 
-  <div class="foot">Saved locally in this browser · <b><span id="savedAt">—</span></b> · Use <b>Local backup</b> / <b>Export report</b> to keep copies.</div>
+  <div class="foot" id="foot">Live from Supabase · public read · sign in to edit</div>
 </div>
 
 <!-- Update modal -->
@@ -154,255 +140,264 @@ h1{font-size:27px;font-weight:800;letter-spacing:-.4px;margin:5px 0 4px}
   <div class="modal">
     <h2>What's new?</h2>
     <div class="desc">Log an update. It appends to the project's history, and can change the status, refresh the summary, or add a task.</div>
-    <div class="field">
-      <label>Project</label>
-      <select id="fProject" onchange="onProjectPick()"></select>
-    </div>
+    <div class="field"><label>Project</label><select id="fProject" onchange="onProjectPick()"></select></div>
     <div class="field hide" id="newWrap">
       <div class="mrow">
         <div class="field"><label>New project name</label><input id="fNewName" placeholder="e.g. Investor one-pager"/></div>
         <div class="field"><label>Category</label>
-          <select id="fNewCat"><option>Decks</option><option>Brand</option><option>Website</option><option>CRM</option><option>Other</option></select>
-        </div>
+          <select id="fNewCat"><option>Decks</option><option>Brand</option><option>Website</option><option>CRM</option><option>Other</option></select></div>
       </div>
     </div>
-    <div class="mrow">
-      <div class="field"><label>Status</label><select id="fStatus"></select></div>
-    </div>
+    <div class="mrow"><div class="field"><label>Status</label><select id="fStatus"></select></div></div>
     <div class="field"><label>Where it stands (short summary)</label><textarea id="fSummary" placeholder="One or two lines on the current state…"></textarea></div>
     <div class="field"><label>Update note</label><textarea id="fNote" placeholder="What changed in this update…"></textarea></div>
     <div class="field"><label>Add a task (optional)</label><input id="fTask" placeholder="A new to-do for this project"/></div>
     <div class="modal-actions">
       <button class="btn" onclick="closeUpdate()">Cancel</button>
-      <button class="btn primary" onclick="saveUpdate()">Save update</button>
+      <button class="btn primary" id="saveBtn" onclick="saveUpdate()">Save update</button>
     </div>
   </div>
 </div>
 
-<!-- Backup modal -->
-<div class="overlay" id="bkOverlay">
-  <div class="modal">
-    <h2>Backup &amp; restore</h2>
-    <div class="desc">Download the whole board, or paste a saved copy to restore it.</div>
-    <div class="field"><label>Board data (JSON)</label><textarea id="bkData" style="min-height:180px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px"></textarea></div>
+<!-- Sign-in modal -->
+<div class="overlay" id="authOverlay">
+  <div class="modal sm">
+    <h2>Sign in to edit</h2>
+    <div class="desc">Editing the board requires a team login. Enter your email and we'll send a one-time magic link.</div>
+    <div class="field"><label>Work email</label><input id="fEmail" type="email" placeholder="you@company.com"/></div>
+    <div class="note hide" id="authMsg"></div>
     <div class="modal-actions">
-      <button class="btn" onclick="closeBackup()">Close</button>
-      <button class="btn" onclick="downloadJSON()">Download file</button>
-      <button class="btn primary" onclick="restoreJSON()">Restore from text</button>
+      <button class="btn" onclick="closeAuth()">Cancel</button>
+      <button class="btn primary" id="magicBtn" onclick="sendMagic()">Send magic link</button>
     </div>
   </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-const KEY = "wise_status_board_v1";
+/* ============================================================
+   CONFIG — paste your Supabase project values here.
+   Both are safe to expose publicly (the anon key is protected
+   by Row Level Security). Find them in Supabase →
+   Project Settings → API.
+   ============================================================ */
+const SUPABASE_URL      = "https://qpxpttztfmzdxhyqazoh.supabase.co";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFweHB0dHp0Zm16ZHhoeXFhem9oIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIzMTc1NjEsImV4cCI6MjA5Nzg5MzU2MX0.4piU9YC4sAna30BlfVELtbdpsO0WZ4WO4rEwbJZ9_4A";
+
 const STATUSES = [
-  {id:"Delivered",   color:"var(--st-deliv)"},
-  {id:"In progress", color:"var(--st-prog)"},
-  {id:"Planning",    color:"var(--st-plan)"},
-  {id:"Blocked",     color:"var(--st-block)"},
-  {id:"Not started", color:"var(--st-none)"},
+  {id:"Delivered",color:"var(--st-deliv)"},{id:"In progress",color:"var(--st-prog)"},
+  {id:"Planning",color:"var(--st-plan)"},{id:"Blocked",color:"var(--st-block)"},{id:"Not started",color:"var(--st-none)"},
 ];
 const stColor = s => (STATUSES.find(x=>x.id===s)||{color:"var(--st-none)"}).color;
-const today = () => new Date().toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"});
+const esc = s => (s==null?"":String(s)).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmt = ts => new Date(ts).toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"});
 
-function seed(){
-  const d = today();
-  return [
-    {id:"p1", name:"WISE Power — Capabilities Deck", category:"Decks", status:"Delivered",
-     summary:"10-slide deck delivered: solar PV, BESS, microgrids, micro data centers, the 2016 patent, the Children's Mercy Park microgrid case study, and leadership. Green-forward WISE family styling.",
-     tasks:[{t:"Build deck",done:true},{t:"Brand-align colors & logo",done:true},{t:"Visual QA",done:true},{t:"Final stakeholder sign-off",done:false}],
-     history:[{dt:d,note:"Delivered v1 in the shared family system.",status:"Delivered"}]},
-    {id:"p2", name:"WISE EV — Capabilities Deck", category:"Decks", status:"Delivered",
-     summary:"11-slide deck delivered: Hub & Spoke model, Nevada DOT (3,400 / 13), key partners, NASCAR, and the $65B-by-2040 market. Real WISE EV Charging logo on the white-chip rule.",
-     tasks:[{t:"Build deck",done:true},{t:"Logo treatment (white chip)",done:true},{t:"Visual QA",done:true},{t:"Final stakeholder sign-off",done:false}],
-     history:[{dt:d,note:"Delivered v1 — blue-forward, real EV logo.",status:"Delivered"}]},
-    {id:"p3", name:"NanoWise — Investment Deck", category:"Decks", status:"Delivered",
-     summary:"10-slide deck delivered: SequesterTech™ benefits, product line, target markets, $10M Phase 1 ask, projected-profit chart, and the patent pipeline. Red/silver/charcoal identity.",
-     tasks:[{t:"Build deck",done:true},{t:"Projected-profit chart",done:true},{t:"Visual QA",done:true},{t:"Confirm figures with finance",done:false}],
-     history:[{dt:d,note:"Delivered v1 — distinct red/silver/charcoal theme.",status:"Delivered"}]},
-    {id:"p4", name:"KJK — Intro Deck", category:"Decks", status:"Delivered",
-     summary:"17-slide deck updated: Kalpesh Patel added as a Member; References slide changed to 'Contact information available upon request.' Navy / gold / steel, serif headers.",
-     tasks:[{t:"Add Kalpesh Patel slide",done:true},{t:"Update References slide",done:true},{t:"Visual QA",done:true}],
-     history:[{dt:d,note:"Updated with Kalpesh + reference changes.",status:"Delivered"}]},
-    {id:"p5", name:"Brand Redo — Portfolio Identity", category:"Brand", status:"In progress",
-     summary:"v0.1 brand standards report delivered across all 5 entities. Lock-in pending: vector logo masters, a WISE Power mark decision, codified neutrals, and ratified NanoWise & KJK palettes.",
-     tasks:[{t:"Audit current assets",done:true},{t:"Build v0.1 standards report",done:true},{t:"Commission vector logo masters",done:false},{t:"Decide WISE Power mark",done:false},{t:"Codify neutral navy/charcoal",done:false},{t:"Ratify NanoWise & KJK palettes",done:false}],
-     history:[{dt:d,note:"v0.1 baseline report delivered; six lock-in actions identified.",status:"In progress"}]},
-    {id:"p6", name:"Website — WISE Energy Group", category:"Website", status:"Planning",
-     summary:"Corporate WEG site. Primary CTA: investor inquiry. Scoping; awaiting final brand direction before design.",
-     tasks:[{t:"Sitemap & content plan",done:false},{t:"Copy",done:false},{t:"Design",done:false},{t:"Build",done:false},{t:"Launch",done:false}],
-     history:[{dt:d,note:"Project opened — gated on Brand Redo.",status:"Planning"}]},
-    {id:"p7", name:"Website — WISE Power (getwisepower.com)", category:"Website", status:"Planning",
-     summary:"Relaunch with updated case studies, patents, and capabilities. Primary CTA: quote request. Awaiting brand lock-in.",
-     tasks:[{t:"Content refresh plan",done:false},{t:"Design",done:false},{t:"Build",done:false},{t:"Launch",done:false}],
-     history:[{dt:d,note:"Project opened — relaunch planned.",status:"Planning"}]},
-    {id:"p8", name:"Website — WISE EV (wise-ev.com)", category:"Website", status:"Planning",
-     summary:"Relaunch with Rides by WISE integrated and a full brand refresh. Primary CTA: app download + site-host inquiry.",
-     tasks:[{t:"Rides by WISE integration plan",done:false},{t:"Design",done:false},{t:"Build",done:false},{t:"Launch",done:false}],
-     history:[{dt:d,note:"Project opened — relaunch + Rides by WISE.",status:"Planning"}]},
-    {id:"p9", name:"Website — NanoWise (nanowise.com)", category:"Website", status:"Blocked",
-     summary:"Science-forward site. Blocked pending IP vetting / patent-status resolution before any public launch.",
-     tasks:[{t:"Resolve IP / patent status",done:false},{t:"Content plan",done:false},{t:"Design",done:false},{t:"Build",done:false}],
-     history:[{dt:d,note:"On hold — gated on NanoWise IP vetting.",status:"Blocked"}]},
-    {id:"p10", name:"Website — KJK Solutions International", category:"Website", status:"Not started",
-     summary:"KJK has historically been the non-public-facing financing arm. Public-vs-private decision and scope needed before any build begins.",
-     tasks:[{t:"Decide public vs. private",done:false},{t:"Define scope",done:false}],
-     history:[{dt:d,note:"Project opened — needs scope decision.",status:"Not started"}]},
-    {id:"p11", name:"CRM Updates", category:"CRM", status:"In progress",
-     summary:"Pull latest CBRE site lists and cross-reference the pipeline with Rides by WISE target markets. Priority filter: sites near major highways in the 6 launch markets.",
-     tasks:[{t:"Pull latest CBRE site lists",done:false},{t:"Send links to Kevin",done:false},{t:"Build CRM site map",done:false},{t:"Cross-ref Rides by WISE markets",done:false}],
-     history:[{dt:d,note:"Active — CBRE pipeline cross-reference underway.",status:"In progress"}]},
-  ];
+let sb=null, state=[], filter="All", expanded={}, canEdit=false, userEmail=null;
+
+const configured = () => SUPABASE_URL.startsWith("https://") && !SUPABASE_URL.includes("YOUR-PROJECT") && !SUPABASE_ANON_KEY.includes("YOUR-ANON");
+
+function showSetup(){
+  document.getElementById("filters").innerHTML="";
+  document.getElementById("grid").innerHTML="";
+  document.getElementById("setup").innerHTML=`<div class="setup">
+    <h2>⚙️ Connect your Supabase project</h2>
+    <p style="color:var(--muted);font-size:14px">This board is ready — it just needs your project keys.</p>
+    <ol>
+      <li>Create a project at <code>supabase.com</code>.</li>
+      <li>In the SQL Editor, run <code>supabase_schema.sql</code>, then <code>supabase_seed.sql</code>.</li>
+      <li>Go to <b>Project Settings → API</b> and copy the <b>Project URL</b> and <b>anon public</b> key.</li>
+      <li>Open this file and paste them into <code>SUPABASE_URL</code> and <code>SUPABASE_ANON_KEY</code> at the top of the script.</li>
+      <li>In <b>Authentication → URL Configuration</b>, add this page's URL to the redirect allow-list (for magic-link sign-in).</li>
+    </ol></div>`;
 }
 
-let state = [];
-let filter = "All";
-let expanded = {};
-
-function load(){
-  try{ const raw = localStorage.getItem(KEY); if(raw) return JSON.parse(raw); }catch(e){}
-  const s = seed(); state = s; save(); return s;
+async function init(){
+  if(!configured()){ showSetup(); return; }
+  sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+  const { data:{ session } } = await sb.auth.getSession();
+  setAuth(session);
+  sb.auth.onAuthStateChange((_e, s)=> setAuth(s));
+  await fetchBoard();
+  subscribeRealtime();
 }
-function save(s){
-  if(s) state = s;
-  try{ localStorage.setItem(KEY, JSON.stringify(state)); }catch(e){}
-  const now = new Date().toLocaleString("en-US",{month:"short",day:"numeric",hour:"numeric",minute:"2-digit"});
-  const el=document.getElementById("savedAt"); if(el) el.textContent = now;
+function setAuth(session){
+  canEdit = !!session;
+  userEmail = session?.user?.email || null;
+  renderActions(); render();
 }
 
-function counts(){
-  const c={All:state.length}; STATUSES.forEach(s=>c[s.id]=0);
-  state.forEach(p=>{ c[p.status]=(c[p.status]||0)+1; });
-  return c;
+async function fetchBoard(){
+  const { data, error } = await sb.from("projects")
+    .select("*, tasks(*), updates(*)").order("sort_order",{ascending:true});
+  if(error){ document.getElementById("grid").innerHTML=`<div class="banner">Couldn't load the board: ${esc(error.message)}</div>`; return; }
+  state = (data||[]).map(p=>({
+    ...p,
+    tasks:(p.tasks||[]).slice().sort((a,b)=>a.sort_order-b.sort_order),
+    updates:(p.updates||[]).slice().sort((a,b)=>new Date(b.created_at)-new Date(a.created_at)),
+  }));
+  render();
+}
+let rtTimer=null;
+function subscribeRealtime(){
+  sb.channel("board")
+    .on("postgres_changes",{event:"*",schema:"public",table:"projects"}, queueRefresh)
+    .on("postgres_changes",{event:"*",schema:"public",table:"tasks"},    queueRefresh)
+    .on("postgres_changes",{event:"*",schema:"public",table:"updates"},  queueRefresh)
+    .subscribe();
+}
+function queueRefresh(){ clearTimeout(rtTimer); rtTimer=setTimeout(fetchBoard,250); }
+
+/* ---------- render ---------- */
+function counts(){ const c={All:state.length}; STATUSES.forEach(s=>c[s.id]=0); state.forEach(p=>c[p.status]=(c[p.status]||0)+1); return c; }
+function renderActions(){
+  const a=document.getElementById("actions");
+  const exportBtn=`<button class="btn" onclick="exportReport()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>Export report</button>`;
+  if(canEdit){
+    a.innerHTML=`<span class="who">Editing as <b>${esc(userEmail||"team")}</b></span>${exportBtn}
+      <button class="btn primary" onclick="openUpdate()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg>What's new</button>
+      <button class="btn ghost" onclick="signOut()">Sign out</button>`;
+  } else {
+    a.innerHTML=`${exportBtn}<button class="btn primary" onclick="openAuth()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M15 12H3"/></svg>Sign in to edit</button>`;
+  }
 }
 function renderFilters(){
-  const c=counts(); const f=document.getElementById("filters");
+  const c=counts(), f=document.getElementById("filters");
   const chips=[{id:"All",color:"var(--ink)"}].concat(STATUSES);
-  f.innerHTML = chips.map(s=>{
-    const active = filter===s.id ? "active":"";
-    const dot = s.id==="All" ? "" : `<span class="dot" style="background:${s.color}"></span>`;
-    return `<button class="chip ${active}" onclick="setFilter('${s.id}')">${dot}${s.id}<span class="cnt">${c[s.id]||0}</span></button>`;
+  f.innerHTML=chips.map(s=>{
+    const dot=s.id==="All"?"":`<span class="dot" style="background:${s.color}"></span>`;
+    return `<button class="chip ${filter===s.id?'active':''}" onclick="setFilter('${s.id}')">${dot}${s.id}<span class="cnt">${c[s.id]||0}</span></button>`;
   }).join("");
 }
 function setFilter(f){ filter=f; render(); }
-
 function taskHtml(p){
   if(!p.tasks||!p.tasks.length) return "";
-  const done=p.tasks.filter(t=>t.done).length, tot=p.tasks.length;
-  const pct=Math.round(done/tot*100);
-  const rows=p.tasks.map((t,i)=>`<div class="task ${t.done?'done':''}" onclick="toggleTask('${p.id}',${i})">
+  const done=p.tasks.filter(t=>t.done).length, tot=p.tasks.length, pct=Math.round(done/tot*100);
+  const rows=p.tasks.map(t=>`<div class="task ${t.done?'done':''} ${canEdit?'can':''}" ${canEdit?`onclick="toggleTask('${t.id}',${t.done})"`:''}>
       <span class="box">${t.done?'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4"><path d="M20 6 9 17l-5-5"/></svg>':''}</span>
-      <span>${esc(t.t)}</span></div>`).join("");
-  return `<div class="tasks"><div class="tk-head"><span>Tasks</span><span>${done}/${tot}</span></div>
-    <div class="bar"><i style="width:${pct}%"></i></div>${rows}</div>`;
+      <span>${esc(t.text)}</span></div>`).join("");
+  return `<div class="tasks"><div class="tk-head"><span>Tasks</span><span>${done}/${tot}</span></div><div class="bar"><i style="width:${pct}%"></i></div>${rows}</div>`;
 }
 function updHtml(p){
-  if(!p.history||!p.history.length) return "";
+  if(!p.updates||!p.updates.length) return canEdit?`<div class="upd"><div class="cardfoot"><span></span><button class="miniupd" onclick="openUpdate('${p.id}')">+ Update</button></div></div>`:"";
   const ex=expanded[p.id];
-  const items=p.history.map((h,i)=>`<div class="uitem ${(!ex&&i>0)?'hidden':''}"><span class="dt">${esc(h.dt)}</span>${esc(h.note)}</div>`).join("");
-  const more = p.history.length>1 ? `<button class="more" onclick="toggleExp('${p.id}')">${ex?'Show less':'Show all '+p.history.length+' updates'}</button>` : `<span></span>`;
-  return `<div class="upd"><div class="lbl">Updates</div>${items}
-    <div class="cardfoot">${more}<button class="miniupd" onclick="openUpdate('${p.id}')">+ Update</button></div></div>`;
+  const items=p.updates.map((h,i)=>`<div class="uitem ${(!ex&&i>0)?'hidden':''}"><span class="dt">${esc(fmt(h.created_at))}</span>${esc(h.note)}</div>`).join("");
+  const more=p.updates.length>1?`<button class="more" onclick="toggleExp('${p.id}')">${ex?'Show less':'Show all '+p.updates.length+' updates'}</button>`:`<span></span>`;
+  const editBtn=canEdit?`<button class="miniupd" onclick="openUpdate('${p.id}')">+ Update</button>`:`<span></span>`;
+  return `<div class="upd"><div class="lbl">Updates</div>${items}<div class="cardfoot">${more}${editBtn}</div></div>`;
 }
 function card(p){
   return `<div class="card">
     <div class="crow"><span class="cat">${esc(p.category)}</span>
       <span class="pill" style="color:${stColor(p.status)};background:${stColor(p.status)}22"><span class="d"></span>${esc(p.status)}</span></div>
-    <h3>${esc(p.name)}</h3>
-    <div class="summary">${esc(p.summary||"")}</div>
-    ${taskHtml(p)}
-    ${updHtml(p)}
-  </div>`;
+    <h3>${esc(p.name)}</h3><div class="summary">${esc(p.summary||"")}</div>${taskHtml(p)}${updHtml(p)}</div>`;
 }
 function render(){
-  document.getElementById("sub").textContent = `Internal portfolio pipeline · ${state.length} workstreams tracked`;
+  if(!configured()) return;
+  document.getElementById("sub").textContent=`Internal portfolio pipeline · ${state.length} workstreams tracked`;
+  document.getElementById("viewonly").innerHTML = canEdit ? "" :
+    `<div class="banner">👁 View-only — sign in to log updates and check off tasks.</div>`;
   renderFilters();
-  const list = filter==="All" ? state : state.filter(p=>p.status===filter);
-  document.getElementById("grid").innerHTML = list.map(card).join("") || `<div style="color:var(--muted);padding:30px">No projects with this status.</div>`;
+  const list=filter==="All"?state:state.filter(p=>p.status===filter);
+  document.getElementById("grid").innerHTML=list.map(card).join("")||`<div style="color:var(--muted);padding:30px">No projects with this status.</div>`;
 }
-function esc(s){ return (s==null?"":String(s)).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
-
-function toggleTask(id,i){ const p=state.find(x=>x.id===id); p.tasks[i].done=!p.tasks[i].done; save(); render(); }
 function toggleExp(id){ expanded[id]=!expanded[id]; render(); }
 
-/* ---- update modal ---- */
+/* ---------- mutations (auth required) ---------- */
+async function toggleTask(id,cur){
+  if(!canEdit) return;
+  const { error } = await sb.from("tasks").update({done:!cur}).eq("id",id);
+  if(error) alert(error.message); else fetchBoard();
+}
 function fillStatusSelect(sel,val){ sel.innerHTML=STATUSES.map(s=>`<option ${s.id===val?'selected':''}>${s.id}</option>`).join(""); }
 function openUpdate(pid){
+  if(!canEdit) return openAuth();
   const sel=document.getElementById("fProject");
-  sel.innerHTML = `<option value="__new">➕ New project…</option>` + state.map(p=>`<option value="${p.id}">${esc(p.name)}</option>`).join("");
-  sel.value = pid || (state[0]?state[0].id:"__new");
-  fillStatusSelect(document.getElementById("fStatus"));
-  document.getElementById("fNote").value="";
-  document.getElementById("fTask").value="";
-  document.getElementById("fNewName").value="";
+  sel.innerHTML=`<option value="__new">➕ New project…</option>`+state.map(p=>`<option value="${p.id}">${esc(p.name)}</option>`).join("");
+  sel.value=pid||(state[0]?state[0].id:"__new");
+  ["fNote","fTask","fNewName"].forEach(i=>document.getElementById(i).value="");
   onProjectPick();
   document.getElementById("updOverlay").classList.add("open");
 }
 function onProjectPick(){
-  const v=document.getElementById("fProject").value;
-  const isNew = v==="__new";
+  const v=document.getElementById("fProject").value, isNew=v==="__new";
   document.getElementById("newWrap").classList.toggle("hide",!isNew);
-  const p = state.find(x=>x.id===v);
+  const p=state.find(x=>x.id===v);
   fillStatusSelect(document.getElementById("fStatus"), p?p.status:"Not started");
-  document.getElementById("fSummary").value = p?p.summary:"";
+  document.getElementById("fSummary").value=p?(p.summary||""):"";
 }
 function closeUpdate(){ document.getElementById("updOverlay").classList.remove("open"); }
-function saveUpdate(){
-  const v=document.getElementById("fProject").value;
-  const status=document.getElementById("fStatus").value;
-  const summary=document.getElementById("fSummary").value.trim();
-  const note=document.getElementById("fNote").value.trim();
-  const task=document.getElementById("fTask").value.trim();
-  let p;
-  if(v==="__new"){
-    const name=document.getElementById("fNewName").value.trim();
-    if(!name){ alert("Give the new project a name."); return; }
-    p={id:"p"+Date.now(), name, category:document.getElementById("fNewCat").value, status, summary, tasks:[], history:[]};
-    state.push(p);
-  } else {
-    p=state.find(x=>x.id===v);
-    p.status=status; if(summary) p.summary=summary;
-  }
-  if(task) p.tasks.push({t:task,done:false});
-  p.history.unshift({dt:today(), note: note || `Status set to ${status}.`, status});
-  save(); render(); closeUpdate();
+async function saveUpdate(){
+  const btn=document.getElementById("saveBtn"); btn.disabled=true;
+  try{
+    const v=document.getElementById("fProject").value;
+    const status=document.getElementById("fStatus").value;
+    const summary=document.getElementById("fSummary").value.trim();
+    const note=document.getElementById("fNote").value.trim();
+    const task=document.getElementById("fTask").value.trim();
+    let pid=v;
+    if(v==="__new"){
+      const name=document.getElementById("fNewName").value.trim();
+      if(!name){ alert("Give the new project a name."); btn.disabled=false; return; }
+      const maxOrder=Math.max(0,...state.map(p=>p.sort_order||0));
+      const { data, error } = await sb.from("projects")
+        .insert({name, category:document.getElementById("fNewCat").value, status, summary, sort_order:maxOrder+1})
+        .select().single();
+      if(error) throw error; pid=data.id;
+    } else {
+      const upd={status}; if(summary) upd.summary=summary;
+      const { error } = await sb.from("projects").update(upd).eq("id",pid);
+      if(error) throw error;
+    }
+    const { error:uErr } = await sb.from("updates").insert({project_id:pid, note: note||("Status set to "+status+"."), status});
+    if(uErr) throw uErr;
+    if(task){
+      const maxT=Math.max(0,...((state.find(p=>p.id===pid)?.tasks)||[]).map(t=>t.sort_order||0));
+      const { error:tErr } = await sb.from("tasks").insert({project_id:pid, text:task, sort_order:maxT+1});
+      if(tErr) throw tErr;
+    }
+    closeUpdate(); await fetchBoard();
+  }catch(e){ alert("Save failed: "+(e.message||e)); }
+  finally{ btn.disabled=false; }
 }
 
-/* ---- backup / report ---- */
-function openBackup(){ document.getElementById("bkData").value=JSON.stringify(state,null,2); document.getElementById("bkOverlay").classList.add("open"); }
-function closeBackup(){ document.getElementById("bkOverlay").classList.remove("open"); }
-function dl(name,text,type){ const b=new Blob([text],{type}); const u=URL.createObjectURL(b);
-  const a=document.createElement("a"); a.href=u; a.download=name; a.click(); URL.revokeObjectURL(u); }
-function stamp(){ return new Date().toISOString().slice(0,10); }
-function downloadJSON(){ dl(`wise-board-${stamp()}.json`, JSON.stringify(state,null,2), "application/json"); }
-function restoreJSON(){
-  try{ const d=JSON.parse(document.getElementById("bkData").value); if(!Array.isArray(d)) throw 0;
-    state=d; save(); render(); closeBackup(); }
-  catch(e){ alert("That doesn't look like a valid board JSON."); }
+/* ---------- auth ---------- */
+function openAuth(){ document.getElementById("authMsg").classList.add("hide"); document.getElementById("authOverlay").classList.add("open"); }
+function closeAuth(){ document.getElementById("authOverlay").classList.remove("open"); }
+async function sendMagic(){
+  const email=document.getElementById("fEmail").value.trim();
+  const msg=document.getElementById("authMsg"); const btn=document.getElementById("magicBtn");
+  if(!email){ return; }
+  btn.disabled=true;
+  const { error } = await sb.auth.signInWithOtp({ email, options:{ emailRedirectTo: window.location.href.split('#')[0] }});
+  msg.classList.remove("hide");
+  msg.textContent = error ? ("Couldn't send: "+error.message) : "✓ Check your inbox for the magic link, then return here.";
+  btn.disabled=false;
 }
+async function signOut(){ await sb.auth.signOut(); }
+
+/* ---------- export ---------- */
 function exportReport(){
   const c=counts();
-  let m=`# WISE 2026 — Status Report\n_${today()} · ${state.length} workstreams_\n\n`;
-  m+=STATUSES.map(s=>`**${s.id}:** ${c[s.id]||0}`).join("  ·  ")+"\n\n";
-  const cats=[...new Set(state.map(p=>p.category))];
-  cats.forEach(cat=>{
+  let m=`# WISE 2026 — Status Report\n_${fmt(Date.now())} · ${state.length} workstreams_\n\n`;
+  m+=STATUSES.map(s=>`**${s.id}:** ${c[s.id]||0}`).join("  ·  ")+"\n";
+  [...new Set(state.map(p=>p.category))].forEach(cat=>{
     m+=`\n## ${cat}\n`;
     state.filter(p=>p.category===cat).forEach(p=>{
       const done=(p.tasks||[]).filter(t=>t.done).length, tot=(p.tasks||[]).length;
-      m+=`\n### ${p.name}  —  ${p.status}\n${p.summary||""}\n`;
+      m+=`\n### ${p.name} — ${p.status}\n${p.summary||""}\n`;
       if(tot) m+=`Tasks: ${done}/${tot} complete\n`;
-      if(p.history&&p.history[0]) m+=`Latest (${p.history[0].dt}): ${p.history[0].note}\n`;
+      if(p.updates&&p.updates[0]) m+=`Latest (${fmt(p.updates[0].created_at)}): ${p.updates[0].note}\n`;
     });
   });
-  dl(`wise-status-report-${stamp()}.md`, m, "text/markdown");
+  const b=new Blob([m],{type:"text/markdown"}); const u=URL.createObjectURL(b);
+  const a=document.createElement("a"); a.href=u; a.download=`wise-status-report-${new Date().toISOString().slice(0,10)}.md`; a.click(); URL.revokeObjectURL(u);
 }
 
-/* close modals on backdrop click */
 document.querySelectorAll(".overlay").forEach(o=>o.addEventListener("click",e=>{ if(e.target===o) o.classList.remove("open"); }));
 document.addEventListener("keydown",e=>{ if(e.key==="Escape") document.querySelectorAll(".overlay").forEach(o=>o.classList.remove("open")); });
 
-state = load();
-save(); render();
+renderActions();
+init();
 </script>
 </body>
 </html>
